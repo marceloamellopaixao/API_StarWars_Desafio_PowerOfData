@@ -73,3 +73,19 @@ def get_filter_sorted_data(search_data_func, endpoint, search_params=None, sort_
             'sort_by': '',
             'sort_order': 'asc'
         }
+
+    # Busca os dados do endpoint
+    data = search_data_func(endpoint)
+    data_list = data.get('results', [])
+
+    # Filtra os dados usando os parâmetros de pesquisa
+    filtered_data = filter_data(data_list, **search_params)
+
+    # Obtém os parâmetros de classificação
+    sort_by = sort_params.get('sort_by', '')
+    sort_order = sort_params.get('sort_order', 'asc')
+
+    # Classifica os dados filtrados
+    sorted_data = sort_data(filtered_data, sort_by, sort_order)
+
+    return {'results': sorted_data}

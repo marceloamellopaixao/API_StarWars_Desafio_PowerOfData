@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="feat: Adicionado as configurações do projeto" />
+    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="feat: Adicionado a Função de Filtro e Ordenação" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +136,7 @@
       <workItem from="1731029441282" duration="2004000" />
       <workItem from="1731036879464" duration="11571000" />
       <workItem from="1731068494505" duration="20876000" />
-      <workItem from="1731100859731" duration="452000" />
+      <workItem from="1731100859731" duration="774000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -170,7 +170,47 @@
       <option name="project" value="LOCAL" />
       <updated>1731101304656</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: Adicionado a página inicial da API">
+      <option name="closed" value="true" />
+      <created>1731101406569</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731101406569</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: Adicionado a Função para buscar os dados na api">
+      <option name="closed" value="true" />
+      <created>1731101515283</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731101515283</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: Adicionado a Função de Filtragem dos Dados">
+      <option name="closed" value="true" />
+      <created>1731101562263</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731101562263</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: Adicionado a Função de Ordenação dos Dados">
+      <option name="closed" value="true" />
+      <created>1731101600673</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731101600673</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: Adicionado a Função de Filtro e Ordenação">
+      <option name="closed" value="true" />
+      <created>1731101632959</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731101632959</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +221,12 @@
     <MESSAGE value="feat: Adicionado o gitignore" />
     <MESSAGE value="feat: Adicionado o README" />
     <MESSAGE value="feat: Adicionado as configurações do projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado as configurações do projeto" />
+    <MESSAGE value="feat: Adicionado a página inicial da API" />
+    <MESSAGE value="feat: Adicionado a Função para buscar os dados na api" />
+    <MESSAGE value="feat: Adicionado a Função de Filtragem dos Dados" />
+    <MESSAGE value="feat: Adicionado a Função de Ordenação dos Dados" />
+    <MESSAGE value="feat: Adicionado a Função de Filtro e Ordenação" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado a Função de Filtro e Ordenação" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/flaskProject$jwt_generator.coverage" NAME="jwt-generator Coverage Results" MODIFIED="1731086925990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />

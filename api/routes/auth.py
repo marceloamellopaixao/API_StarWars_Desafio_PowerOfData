@@ -35,6 +35,11 @@ def register():
         description: Usuário já existe ou erro na requisição.
     """
     data = load_users()
+
+    # Verifica se os dados foram carregados corretamente
+    if data is None or 'users' not in data:
+        data = {"users": []}  # Se falhar, inicializa com uma lista vazia
+
     username = request.json.get('username')
     password = request.json.get('password')
 

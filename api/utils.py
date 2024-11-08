@@ -1,4 +1,6 @@
 import requests
+import json
+import os
 
 # Função para buscar os dados na api
 SWAPI_URL = 'https://swapi.dev/api/'
@@ -113,3 +115,26 @@ def get_statistics_func(data_list, atributos):
 
     return contagem
 
+# Funções de Autenticação (Credenciais)
+def save_users(data):
+    try:
+        credentials_dir = 'api/credentials'
+        users_file = os.path.join(credentials_dir, 'users.json')
+
+        if not os.path.exists(credentials_dir):
+            os.makedirs(credentials_dir)
+
+        with open(users_file, 'a+') as file:
+            json.dump(data, file, indent=4)
+    except FileNotFoundError:
+        return {"users": []}
+
+def load_users():
+    try:
+        credentials_dir = 'api/credentials'
+        users_file = os.path.join(credentials_dir, 'users.json')
+
+        with open(users_file) as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return {"users": []}

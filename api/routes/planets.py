@@ -82,3 +82,59 @@ def get_planets():
         return jsonify(response)
     except Exception as e:
         return jsonify({'Erro reconhecido': str(e)}), 404
+
+
+@planets.route('/planets/statistics', methods=['GET'])
+@jwt_required()
+def get_planets_statistics():
+    """Obtém estatísticas de planetas
+    ---
+    tags:
+      - Planetas
+    description: Retorna estatísticas sobre os planetas disponíveis na API, incluindo contagem total, distribuição de terrenos e climas.
+    responses:
+      200:
+        description: Estatísticas dos planetas.
+        schema:
+          type: object
+          properties:
+            Total de Planetas:
+              type: integer
+              description: Total de planetas disponíveis.
+            Distribuição de Terrenos:
+              type: object
+              additionalProperties:
+                type: integer
+                description: Contagem de planetas por terrenos.
+            Distribuição de Climas:
+              type: object
+              additionalProperties:
+                type: integer
+                description: Contagem de planetas por climas.
+      404:
+        description: Nenhum dado encontrado ou erro durante a busca.
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+              description: Mensagem de erro retornada.
+    """
+    planets = search_data('planets/')
+    planets_list = planets.get('results', [])
+    total_planets = len(planets_list)
+
+    try:
+        contabilizar_atributos = ['terrain', 'climate']
+        response = get_statistics_func(planets_list, contabilizar_atributos)
+
+        contabilizador_terrain = response['terrain']
+        contabilizador_climate = response['climate']
+
+        return jsonify({
+            'Total de Planetas': total_planets,
+            'Distribuicao de Terrenos': contabilizador_terrain,
+            'Distribuicao de Climas': contabilizador_climate
+        })
+    except Exception as e:
+        return jsonify({'Erro reconhecido': str(e)}), 404

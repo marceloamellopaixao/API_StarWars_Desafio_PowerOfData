@@ -49,3 +49,27 @@ def sort_data(data_list, sort_by='name', sort_order='asc'):
         list: A lista classificada.
     """
     return sorted(data_list, key=lambda x: x[sort_by], reverse=(sort_order == 'desc'))
+
+
+# Função de Filtro e Ordenação
+def get_filter_sorted_data(search_data_func, endpoint, search_params=None, sort_params=None):
+    """Função genérica para obter, filtrar e classificar dados de um endpoint.
+
+    Args:
+        search_data_func (function): A função que busca os dados do endpoint.
+        endpoint (str): O endpoint do qual obter os dados.
+        search_params (dict, optional): Um dicionário com os parâmetros de pesquisa.
+        sort_params (dict, optional): Um dicionário com os parâmetros de classificação.
+
+    Returns:
+        dict: Um dicionário contendo os dados filtrados e classificados.
+    """
+    # Inicializa os parâmetros de pesquisa e classificação
+    if search_params is None:
+        search_params = {}
+
+    if sort_params is None:
+        sort_params = {
+            'sort_by': '',
+            'sort_order': 'asc'
+        }

@@ -142,3 +142,51 @@ def get_films_statistics():
         })
     except Exception as e:
         return jsonify({'Erro reconhecido': str(e)}), 404
+
+@films.route('/films/<int:film_id>/characters', methods=['GET'])
+@jwt_required()
+def get_characters_by_film(film_id):
+    """Obtém personagens de um filme específico
+    ---
+    tags:
+      - Filmes
+    parameters:
+      - name: film_id
+        in: path
+        type: integer
+        required: true
+        description: ID do filme para buscar os personagens.
+    responses:
+      200:
+        description: Lista de URLs dos personagens do filme.
+        schema:
+          type: object
+          properties:
+            characters:
+              type: array
+              items:
+                type: string
+                description: URL do personagem na API.
+      404:
+        description: Filme não encontrado ou sem personagens.
+        schema:
+          type: object
+          properties:
+            msg:
+              type: string
+              description: Mensagem de erro retornada.
+    """
+    result = search_data(f'films/{film_id}/')
+
+    # Verifica se result é um tuple e extrai os dados ou retorna erro
+    if isinstance(result, tuple):
+        msg, status_code = result
+        return jsonify({'msg': msg}), status_code
+
+    film_data = result  # Se não houver erro, atribui os dados do filme
+    character_urls = film_data.get('characters', [])
+
+    print(f"URLs dos personagens para o filme {film_id}: {character_urls}")
+
+    # Retorna apenas as URLs dos personagens
+    return jsonify({'characters': character_urls}), 200

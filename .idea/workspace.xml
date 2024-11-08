@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="feat: Adicionado o metodo de Obtém os personagens de um filme por ID" />
+    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="feat: Adicionado o metodo de obter as estatísticas dos planetas" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +136,7 @@
       <workItem from="1731029441282" duration="2004000" />
       <workItem from="1731036879464" duration="11571000" />
       <workItem from="1731068494505" duration="20876000" />
-      <workItem from="1731100859731" duration="1438000" />
+      <workItem from="1731100859731" duration="1756000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -274,7 +274,39 @@
       <option name="project" value="LOCAL" />
       <updated>1731102307261</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: Adicionado o metodo de Obtém todos os personagens">
+      <option name="closed" value="true" />
+      <created>1731102399592</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1731102399592</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: Adicionado o metodo de obter as estatísticas dos personagens">
+      <option name="closed" value="true" />
+      <created>1731102474835</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1731102474835</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: Adicionado o metodo de obter todos os planetas">
+      <option name="closed" value="true" />
+      <created>1731102535951</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1731102535951</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: Adicionado o metodo de obter as estatísticas dos planetas">
+      <option name="closed" value="true" />
+      <created>1731102625197</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1731102625197</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +330,11 @@
     <MESSAGE value="feat: Adicionado o metodo de buscar todos os filmes" />
     <MESSAGE value="feat: Adicionado o metodo de buscar as estatísticas dos filmes" />
     <MESSAGE value="feat: Adicionado o metodo de Obtém os personagens de um filme por ID" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado o metodo de Obtém os personagens de um filme por ID" />
+    <MESSAGE value="feat: Adicionado o metodo de Obtém todos os personagens" />
+    <MESSAGE value="feat: Adicionado o metodo de obter as estatísticas dos personagens" />
+    <MESSAGE value="feat: Adicionado o metodo de obter todos os planetas" />
+    <MESSAGE value="feat: Adicionado o metodo de obter as estatísticas dos planetas" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado o metodo de obter as estatísticas dos planetas" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/flaskProject$jwt_generator.coverage" NAME="jwt-generator Coverage Results" MODIFIED="1731086925990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />

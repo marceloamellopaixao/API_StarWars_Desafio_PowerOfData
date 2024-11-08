@@ -1,0 +1,52 @@
+*{
+    margin: 0 !important;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("../img/background-stars.jpeg") !important;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    color: #fff
+}
+
+a.nav-link{
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.6s;
+}
+
+footer {
+    background-color: #171819;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+footer p{
+    /*background-color: #f8f9fa;*/
+    color: #fff;
+}
+
+.hero {
+    height: 90vh;
+    gap: 40px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+

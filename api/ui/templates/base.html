@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Star Wars API - PowerOfData{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+    <a class="navbar-brand" href="/api/ui/static">API do Star Wars</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse bg-light" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item bg-light">
+                <a class="nav-link" href="/films">Films</a>
+            </li>
+            <li class="nav-item bg-light">
+                <a class="nav-link" href="/people">People</a>
+            </li>
+            <li class="nav-item bg-light">
+                <a class="nav-link" href="/planets">Planets</a>
+            </li>
+            <li class="nav-item bg-light">
+                <a class="nav-link" href="/starships">Starships</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="hero d-flex justify-content-center align-items-center flex-column text-center text-white">
+    <h1>Bem-vindo à API do Star Wars!</h1>
+    <p>Utilize o menu para navegar pelos endpoints disponíveis ou acesse a documentação Swagger abaixo.</p>
+    <a href="/apidocs" class="btn btn-primary btn-lg">Acessar Swagger</a>
+</div>
+
+<footer class="footer bd-footer text-muted">
+    <p>Desenvolvido por Marcelo Augusto | PowerOfData - 2024</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

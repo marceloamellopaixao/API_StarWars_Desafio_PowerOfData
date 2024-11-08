@@ -117,6 +117,12 @@ def get_statistics_func(data_list, atributos):
 
 # Funções de Autenticação (Credenciais)
 def save_users(data):
+    """
+    Salva o usuário no arquivo.
+
+    Esta função busca o arquivo users.json, armazenando
+    os dados do usuário. Se o arquivo não existir, ele será criado.
+    """
     try:
         credentials_dir = 'api/credentials'
         users_file = os.path.join(credentials_dir, 'users.json')
@@ -124,17 +130,36 @@ def save_users(data):
         if not os.path.exists(credentials_dir):
             os.makedirs(credentials_dir)
 
-        with open(users_file, 'a+') as file:
+        with open(users_file, 'w') as file:
             json.dump(data, file, indent=4)
+
+    except json.JSONDecodeError as e:
+        print(f"Erro ao decodificar JSON: {e}")
+
     except FileNotFoundError:
         return {"users": []}
 
+    except Exception as e:
+        print(f"Erro ao carregar usuários: {e}")
+        return {"users": []}
+
 def load_users():
+    """
+    Busca todos os usuários
+
+    Esta função busca o arquivo users.json,
+    trazendo todos os dados armazenados.
+    """
     try:
         credentials_dir = 'api/credentials'
         users_file = os.path.join(credentials_dir, 'users.json')
 
         with open(users_file) as file:
             return json.load(file)
+    except json.JSONDecodeError as e:
+        print(f"Erro ao decodificar JSON: {e}")
     except FileNotFoundError:
+        return {"users": []}
+    except Exception as e:
+        print(f"Erro ao carregar usuários: {e}")
         return {"users": []}

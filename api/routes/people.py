@@ -91,3 +91,65 @@ def get_people():
         return jsonify(response)
     except Exception as e:
         return jsonify({'Erro reconhecido': str(e)}), 404
+
+@people.route('/people/statistics', methods=['GET'])
+@jwt_required()
+def get_people_statistics():
+    """Obtém estatísticas de personagens
+    ---
+    tags:
+      - Personagens
+    description: Retorna estatísticas sobre os personagens disponíveis na API, incluindo contagem total, distribuição de gênero, cor do cabelo e ano de nascimento.
+    responses:
+      200:
+        description: Estatísticas dos personagens.
+        schema:
+          type: object
+          properties:
+            Total de Personagens:
+              type: integer
+              description: Total de personagens disponíveis.
+            Distribuição de Gêneros:
+              type: object
+              additionalProperties:
+                type: integer
+                description: Contagem de personagens por gênero.
+            Distribuição de Cores de Cabelo:
+              type: object
+              additionalProperties:
+                type: integer
+                description: Contagem de personagens por cor de cabelo.
+            Distribuição de Anos de Nascimento:
+              type: object
+              additionalProperties:
+                type: integer
+                description: Contagem de personagens por ano de nascimento.
+      404:
+        description: Nenhum dado encontrado ou erro durante a busca.
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+              description: Mensagem de erro retornada.
+    """
+    people = search_data('people/')
+    people_list = people.get('results', [])
+    total_people = len(people_list)
+
+    try:
+        contabilizar_atributos = ['gender', 'hair_color', 'birth_year']
+        response = get_statistics_func(people_list, contabilizar_atributos)
+
+        contabilizador_gender = response['gender']
+        contabilizador_hair_color = response['hair_color']
+        contabilizador_birth_year = response['birth_year']
+
+        return jsonify({
+            'Total de Personagens': total_people,
+            'Distribuicao de Generos': contabilizador_gender,
+            'Distribuicao de Cores de Cabelo': contabilizador_hair_color,
+            'Distribuicao de Ano de Nascimento': contabilizador_birth_year
+        })
+    except Exception as e:
+        return jsonify({'Erro reconhecido': str(e)}), 404

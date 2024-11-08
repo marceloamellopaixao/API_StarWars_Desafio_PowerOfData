@@ -86,3 +86,59 @@ def get_films():
         return jsonify(response)
     except Exception as e:
         return jsonify({'Erro reconhecido': str(e)}), 404
+
+
+@films.route('/films/statistics', methods=['GET'])
+@jwt_required()
+def get_films_statistics():
+    """Obtém estatísticas de filmes
+    ---
+    tags:
+      - Filmes
+    description: Retorna estatísticas sobre os filmes disponíveis na API, incluindo contagem total, distribuição de produtor e diretor..
+    responses:
+      200:
+        description: Estatísticas dos filmes.
+        schema:
+          type: object
+          properties:
+            Total de Filmes:
+              type: integer
+              description: Total de filmes disponíveis.
+            Distribuição de Produtores:
+              type: object
+              additionalProperties:
+                type: integer
+                description: Contagem de filmes por produtor.
+            Distribuição de Diretores:
+              type: object
+              additionalProperties:
+                type: integer
+                description: Contagem de personagens por diretor.
+      404:
+        description: Nenhum dado encontrado ou erro durante a busca.
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+              description: Mensagem de erro retornada.
+    """
+    films = search_data('films/')
+    films_list = films.get('results', [])
+    total_films = len(films_list)
+
+    try:
+        contabilizar_atributos = ['producer', 'director']
+        response = get_statistics_func(films_list, contabilizar_atributos)
+
+        contabilizador_producer = response['producer']
+        contabilizador_director = response['director']
+
+        return jsonify({
+            'Total de Personagens': total_films,
+            'Distribuicao de Produtores': contabilizador_producer,
+            'Distribuicao de Diretores': contabilizador_director
+        })
+    except Exception as e:
+        return jsonify({'Erro reconhecido': str(e)}), 404

@@ -89,3 +89,27 @@ def get_filter_sorted_data(search_data_func, endpoint, search_params=None, sort_
     sorted_data = sort_data(filtered_data, sort_by, sort_order)
 
     return {'results': sorted_data}
+
+# Função de Estatísticas
+def get_statistics_func(data_list, atributos):
+    """
+    Conta a ocorrência de atributos específicos em uma lista de dicionários.
+
+    :param data_list: Lista de dicionários contendo os dados a serem analisados.
+    :param atributos: Lista de atributos cujas ocorrências devem ser contadas.
+    :return: Dicionário com a contagem de cada atributo.
+    """
+
+    contagem = {atributo: {} for atributo in atributos}
+
+    for item in data_list:
+        for atributo in atributos:
+            valor = item.get(atributo)
+            if valor:
+                if valor in contagem[atributo]:
+                    contagem[atributo][valor] += 1
+                else:
+                    contagem[atributo][valor] = 1
+
+    return contagem
+

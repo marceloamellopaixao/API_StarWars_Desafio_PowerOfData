@@ -4,6 +4,13 @@ from flask_jwt_extended import JWTManager
 from flasgger import Swagger
 import secrets
 
+# Functions Locals
+from api.routes.auth import auth
+from api.routes.films import films
+from api.routes.people import people
+from api.routes.planets import planets
+from api.routes.starships import starships
+
 app = Flask(__name__)
 app.config['JWT_SECRET_KEY'] = secrets.token_urlsafe(32)
 app.config['JWT_ALGORITHM'] = 'HS512'
@@ -47,6 +54,12 @@ def home_app():
         description: Página inicial não encontrada!
     """
     return render_template('base.html')
+
+app.register_blueprint(auth)
+app.register_blueprint(films)
+app.register_blueprint(people)
+app.register_blueprint(planets)
+app.register_blueprint(starships)
 
 if __name__ == '__main__':
     app.run(debug=True)

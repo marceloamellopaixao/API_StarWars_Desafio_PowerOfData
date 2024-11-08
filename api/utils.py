@@ -34,3 +34,18 @@ def filter_data(data_list, **search_params):
         if match:
             filtered_data.append(item)
     return filtered_data
+
+
+# Função de Ordenação dos Dados
+def sort_data(data_list, sort_by='name', sort_order='asc'):
+    """Classifica a lista de dados de acordo com o campo e ordem especificados.
+
+    Args:
+        data_list (list): A lista de dados a ser classificada.
+        sort_by (str): O campo pelo qual classificar.
+        sort_order (str): A ordem da classificação ('asc' ou 'desc').
+
+    Returns:
+        list: A lista classificada.
+    """
+    return sorted(data_list, key=lambda x: x[sort_by], reverse=(sort_order == 'desc'))

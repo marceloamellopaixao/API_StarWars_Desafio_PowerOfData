@@ -5,8 +5,6 @@
       <entry url="file://$PROJECT_DIR$">
         <entryData>
           <resourceRoots>
-            <path value="file://$PROJECT_DIR$/api" />
-            <path value="file://$PROJECT_DIR$/api/credentials" />
             <path value="file://$PROJECT_DIR$/api/ui/static" />
           </resourceRoots>
         </entryData>

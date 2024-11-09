@@ -124,7 +124,7 @@ def save_users(data):
     os dados do usuário. Se o arquivo não existir, ele será criado.
     """
     try:
-        credentials_dir = 'credentials'
+        credentials_dir = 'api/credentials'
         users_file = os.path.join(credentials_dir, 'users.json')
 
         if not os.path.exists(credentials_dir):
@@ -151,7 +151,7 @@ def load_users():
     trazendo todos os dados armazenados.
     """
     try:
-        credentials_dir = 'credentials'
+        credentials_dir = 'api/credentials'
         users_file = os.path.join(credentials_dir, 'users.json')
 
         with open(users_file) as file:

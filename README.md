@@ -39,18 +39,22 @@ A aplicação está organizada em módulos, cada um responsável por diferentes 
 #### Filmes
 - **/films**: Consulta com opções de filtragem dos filmes.
 - **/films/statistics**: Retorna estatísticas sobre filmes.
+- **/films/{film_id}/characters**: Retorna os personagens pelo ID do Filme
 
 #### Personagens
 - **/people**: Consulta com opções de filtragem dos personagens.
 - **/people/statistics**: Retorna estatísticas sobre personagens.
+- **/people/{people_id}/homeworld**: Retorna o planeta natal pelo ID do Personagem
 
 #### Planetas
 - **/planets**: Consulta com opções de filtragem dos planetas.
 - **/planets/statistics**: Retorna estatísticas sobre planetas.
+- **/planets/{planet_id}/residents**: Retorna os residentes pelo ID do Planeta
 
 #### Naves Estelares
 - **/starships**: Consulta com opções de filtragem das naves estelares.
 - **/starships/statistics**: Retorna estatísticas sobre naves.
+- **/starships/{starship_id}/films**: Retorna os filmes pelo ID da Nave Estelar
 
 ---
 

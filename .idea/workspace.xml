@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="fix: correção da estrutura do projeto">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/API_StarWars_Desafio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/API_StarWars_Desafio.iml" afterDir="false" />
+    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="fix: correções nas funções e documentação do Swagger">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/films.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/films.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/people.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/people.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/planets.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/planets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/starships.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/starships.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +191,7 @@
       <workItem from="1731110495846" duration="2216000" />
       <workItem from="1731161799370" duration="957000" />
       <workItem from="1731170935322" duration="3912000" />
-      <workItem from="1731176137253" duration="810000" />
+      <workItem from="1731176137253" duration="2614000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -433,15 +433,29 @@
       <option name="project" value="LOCAL" />
       <updated>1731172494729</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix: correção da página inicial no app.py">
+      <option name="closed" value="true" />
+      <created>1731177189041</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1731177189041</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix: correções nas funções e documentação do Swagger">
+      <option name="closed" value="true" />
+      <created>1731177226483</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1731177226483</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Adicionado a Função para buscar os dados na api" />
-    <MESSAGE value="feat: Adicionado a Função de Filtragem dos Dados" />
     <MESSAGE value="feat: Adicionado a Função de Ordenação dos Dados" />
     <MESSAGE value="feat: Adicionado a Função de Filtro e Ordenação" />
     <MESSAGE value="fix: Correção da Função de Filtro e Ordenação" />
@@ -465,7 +479,9 @@
     <MESSAGE value="fix: corrigido a documentação README" />
     <MESSAGE value="fix: remoção do NAV na página inicial" />
     <MESSAGE value="fix: correção da estrutura do projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: correção da estrutura do projeto" />
+    <MESSAGE value="fix: correção da página inicial no app.py" />
+    <MESSAGE value="fix: correções nas funções e documentação do Swagger" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: correções nas funções e documentação do Swagger" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/flaskProject$jwt_generator.coverage" NAME="jwt-generator Coverage Results" MODIFIED="1731086925990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
@@ -473,6 +489,6 @@
     <SUITE FILE_PATH="coverage/flaskProject$flaskProject.coverage" NAME="API_StarWars_Desafio Coverage Results" MODIFIED="1731048268783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flaskProject$API_StarWars_Desafio.coverage" NAME="API_StarWars_Desafio Coverage Results" MODIFIED="1731096524306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/API_StarWars_Desafio$.coverage" NAME=" Coverage Results" MODIFIED="1731171864513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/API_StarWars_Desafio$API_StarWars_Desafio.coverage" NAME="API_StarWars_Desafio Coverage Results" MODIFIED="1731176931741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/API_StarWars_Desafio$API_StarWars_Desafio.coverage" NAME="API_StarWars_Desafio Coverage Results" MODIFIED="1731178429155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

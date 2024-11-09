@@ -31,7 +31,7 @@ def get_films():
         in: query
         type: string
         required: false
-        description: Campo pelo qual classificar os filmes, exemplo - title.
+        description: Campo pelo qual classificar os filmes, exemplo - title, produtor e diretor.
       - name: sort_order
         in: query
         type: string
@@ -57,9 +57,6 @@ def get_films():
                   director:
                     type: string
                     description: Nome do diretor do filme.
-                  release_date:
-                    type: string
-                    description: Data de lançamento do filme.
       404:
         description: Nenhum filme encontrado ou erro durante a busca.
         schema:
@@ -95,7 +92,7 @@ def get_films_statistics():
     ---
     tags:
       - Filmes
-    description: Retorna estatísticas sobre os filmes disponíveis na API, incluindo contagem total, distribuição de produtor e diretor..
+    description: Retorna estatísticas sobre os filmes disponíveis na API, incluindo contagem total, distribuição de produtor e diretor.
     responses:
       200:
         description: Estatísticas dos filmes.
@@ -124,21 +121,21 @@ def get_films_statistics():
               type: string
               description: Mensagem de erro retornada.
     """
-    films = search_data('films/')
-    films_list = films.get('results', [])
+    films_data = search_data('films/')
+    films_list = films_data.get('results', [])
     total_films = len(films_list)
 
     try:
-        contabilizar_atributos = ['producer', 'director']
-        response = get_statistics_func(films_list, contabilizar_atributos)
+        countability_attributes = ['producer', 'director']
+        response = get_statistics_func(films_list, countability_attributes)
 
-        contabilizador_producer = response['producer']
-        contabilizador_director = response['director']
+        countability_producer = response['producer']
+        countability_director = response['director']
 
         return jsonify({
             'Total de Personagens': total_films,
-            'Distribuicao de Produtores': contabilizador_producer,
-            'Distribuicao de Diretores': contabilizador_director
+            'Distribuicao de Produtores': countability_producer,
+            'Distribuicao de Diretores': countability_director
         })
     except Exception as e:
         return jsonify({'Erro reconhecido': str(e)}), 404
@@ -183,10 +180,9 @@ def get_characters_by_film(film_id):
         msg, status_code = result
         return jsonify({'msg': msg}), status_code
 
-    film_data = result  # Se não houver erro, atribui os dados do filme
+    film_data = result
     character_urls = film_data.get('characters', [])
 
     print(f"URLs dos personagens para o filme {film_id}: {character_urls}")
 
-    # Retorna apenas as URLs dos personagens
     return jsonify({'characters': character_urls}), 200

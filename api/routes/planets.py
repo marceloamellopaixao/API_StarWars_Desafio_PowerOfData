@@ -182,6 +182,6 @@ def get_residents_by_planets(planet_id):
     film_data = planets_data
     resident_urls = film_data.get('residents', [])
 
-    print(f"URLs dos personagens para o filme {planet_id}: {resident_urls}")
+    print(f"URLs dos residentes para o planeta {planet_id}: {resident_urls}")
 
     return jsonify({'residents': resident_urls}), 200

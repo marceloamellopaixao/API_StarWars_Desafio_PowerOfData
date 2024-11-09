@@ -199,6 +199,6 @@ def get_homeworld_by_person(people_id):
     if not homeworld_url:
         return jsonify({'msg': 'Planeta natal não encontrado para este personagem.'}), 404
 
-    print(f"URL do Planeta natal do personagem {people_id}: {homeworld_url}")
+    print(f"URL do planeta natal para o personagem {people_id}: {homeworld_url}")
 
     return jsonify({'homeworld': homeworld_url}), 200

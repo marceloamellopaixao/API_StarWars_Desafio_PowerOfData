@@ -6,7 +6,8 @@
 }
 
 body{
-    background-image: url("../img/background-stars.jpeg") !important;
+    background-image: url("https://api-starwars-desafio-bucket.s3.us-east-2.amazonaws.com/background-stars.jpeg") !important;
+    background-size: cover;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;

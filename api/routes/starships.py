@@ -91,7 +91,7 @@ def get_starships_statistics():
     ---
     tags:
       - Naves Estelares
-    description: Retorna estatísticas sobre as naves estelares disponíveis na API, incluindo contagem total, distribuição de fabricantes e classes de naves estelares..
+    description: Retorna estatísticas sobre as naves estelares disponíveis na API, incluindo contagem total, distribuição de fabricantes e classes de naves estelares.
     responses:
       200:
         description: Estatísticas das naves estelares.
@@ -120,8 +120,8 @@ def get_starships_statistics():
               type: string
               description: Mensagem de erro retornada.
     """
-    starships = search_data('starships/')
-    starships_list = starships.get('results', [])
+    starships_data = search_data('starships/')
+    starships_list = starships_data.get('results', [])
     total_starships = len(starships_list)
 
     try:
@@ -138,3 +138,50 @@ def get_starships_statistics():
         })
     except Exception as e:
         return jsonify({'Erro reconhecido': str(e)}), 404
+
+@starships.route('/starships/<int:starship_id>/films', methods=['GET'])
+# @jwt_required()
+def get_residents_by_planets(starship_id):
+    """Obtém os filmes de uma nave estelar específico
+    ---
+    tags:
+      - Naves Estelares
+    parameters:
+      - name: starship_id
+        in: path
+        type: integer
+        required: true
+        description: ID do nave estelar para buscar os filmes.
+    responses:
+      200:
+        description: Lista de URLs dos filmes da nave estelar.
+        schema:
+          type: object
+          properties:
+            filmes:
+              type: array
+              items:
+                type: string
+                description: URL do filme na API.
+      404:
+        description: Nave estelar não encontrada ou sem filmes.
+        schema:
+          type: object
+          properties:
+            msg:
+              type: string
+              description: Mensagem de erro retornada.
+    """
+    starships_data = search_data(f'starships/{starship_id}/')
+
+    # Verifica se result é um tuple e extrai os dados ou retorna erro
+    if isinstance(starships_data, tuple):
+        msg, status_code = starships_data
+        return jsonify({'msg': msg}), status_code
+
+    film_data = starships_data
+    films_urls = film_data.get('films', [])
+
+    print(f"URLs dos filmes para a nave estelar {starship_id}: {films_urls}")
+
+    return jsonify({'films': films_urls}), 200

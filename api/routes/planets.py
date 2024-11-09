@@ -120,21 +120,68 @@ def get_planets_statistics():
               type: string
               description: Mensagem de erro retornada.
     """
-    planets = search_data('planets/')
-    planets_list = planets.get('results', [])
+    planets_data = search_data('planets/')
+    planets_list = planets_data.get('results', [])
     total_planets = len(planets_list)
 
     try:
-        contabilizar_atributos = ['terrain', 'climate']
-        response = get_statistics_func(planets_list, contabilizar_atributos)
+        countability_atributos = ['terrain', 'climate']
+        response = get_statistics_func(planets_list, countability_atributos)
 
-        contabilizador_terrain = response['terrain']
-        contabilizador_climate = response['climate']
+        countability_terrain = response['terrain']
+        countability_climate = response['climate']
 
         return jsonify({
             'Total de Planetas': total_planets,
-            'Distribuicao de Terrenos': contabilizador_terrain,
-            'Distribuicao de Climas': contabilizador_climate
+            'Distribuicao de Terrenos': countability_terrain,
+            'Distribuicao de Climas': countability_climate
         })
     except Exception as e:
         return jsonify({'Erro reconhecido': str(e)}), 404
+
+@planets.route('/planets/<int:planet_id>/residents', methods=['GET'])
+@jwt_required()
+def get_residents_by_planets(planet_id):
+    """Obtém os residentes de um planeta específico
+    ---
+    tags:
+      - Planetas
+    parameters:
+      - name: planet_id
+        in: path
+        type: integer
+        required: true
+        description: ID do planeta para buscar os residentes.
+    responses:
+      200:
+        description: Lista de URLs dos residentes do planeta.
+        schema:
+          type: object
+          properties:
+            residents:
+              type: array
+              items:
+                type: string
+                description: URL do residente na API.
+      404:
+        description: Planeta não encontrado ou sem residentes.
+        schema:
+          type: object
+          properties:
+            msg:
+              type: string
+              description: Mensagem de erro retornada.
+    """
+    planets_data = search_data(f'planets/{planet_id}/')
+
+    # Verifica se result é um tuple e extrai os dados ou retorna erro
+    if isinstance(planets_data, tuple):
+        msg, status_code = planets_data
+        return jsonify({'msg': msg}), status_code
+
+    film_data = planets_data
+    resident_urls = film_data.get('residents', [])
+
+    print(f"URLs dos personagens para o filme {planet_id}: {resident_urls}")
+
+    return jsonify({'residents': resident_urls}), 200

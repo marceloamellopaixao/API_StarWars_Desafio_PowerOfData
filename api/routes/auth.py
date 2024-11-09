@@ -79,11 +79,11 @@ def login():
             username:
               type: string
               description: Nome de usuário para login.
-              example: "marcelo"
+              example: "novo_usuario"
             password:
               type: string
               description: Senha do usuário.
-              example: "marcelo1234"
+              example: "senha123"
           required:
             - username
             - password

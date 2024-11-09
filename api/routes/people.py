@@ -133,23 +133,72 @@ def get_people_statistics():
               type: string
               description: Mensagem de erro retornada.
     """
-    people = search_data('people/')
-    people_list = people.get('results', [])
+    people_data = search_data('people/')
+    people_list = people_data.get('results', [])
     total_people = len(people_list)
 
     try:
-        contabilizar_atributos = ['gender', 'hair_color', 'birth_year']
-        response = get_statistics_func(people_list, contabilizar_atributos)
+        countability_attributes = ['gender', 'hair_color', 'birth_year']
+        response = get_statistics_func(people_list, countability_attributes)
 
-        contabilizador_gender = response['gender']
-        contabilizador_hair_color = response['hair_color']
-        contabilizador_birth_year = response['birth_year']
+        countability_gender = response['gender']
+        countability_hair_color = response['hair_color']
+        countability_birth_year = response['birth_year']
 
         return jsonify({
             'Total de Personagens': total_people,
-            'Distribuicao de Generos': contabilizador_gender,
-            'Distribuicao de Cores de Cabelo': contabilizador_hair_color,
-            'Distribuicao de Ano de Nascimento': contabilizador_birth_year
+            'Distribuicao de Generos': countability_gender,
+            'Distribuicao de Cores de Cabelo': countability_hair_color,
+            'Distribuicao de Ano de Nascimento': countability_birth_year
         })
     except Exception as e:
         return jsonify({'Erro reconhecido': str(e)}), 404
+
+@people.route('/people/<int:people_id>/homeworld', methods=['GET'])
+@jwt_required()
+def get_homeworld_by_person(people_id):
+    """Obtém o planeta natal de um(a) personagem específico(a)
+    ---
+    tags:
+      - Personagens
+    parameters:
+      - name: people_id
+        in: path
+        type: integer
+        required: true
+        description: ID do personagem para buscar o planeta natal.
+    responses:
+      200:
+        description: URL do planeta natal do personagem.
+        schema:
+          type: object
+          properties:
+            homeworld:
+              type: string
+              description: URL do planeta natal na API.
+      404:
+        description: Personagem não encontrado ou sem planeta natal.
+        schema:
+          type: object
+          properties:
+            msg:
+              type: string
+              description: Mensagem de erro retornada.
+    """
+    result = search_data(f'people/{people_id}/')
+
+    # Verifica se result é um tuple e extrai os dados ou retorna erro
+    if isinstance(result, tuple):
+        msg, status_code = result
+        return jsonify({'msg': msg}), status_code
+
+    people_result = result
+    homeworld_url = people_result.get('homeworld')
+
+    # Caso não exista planeta natal, retorne uma mensagem de erro
+    if not homeworld_url:
+        return jsonify({'msg': 'Planeta natal não encontrado para este personagem.'}), 404
+
+    print(f"URL do Planeta natal do personagem {people_id}: {homeworld_url}")
+
+    return jsonify({'homeworld': homeworld_url}), 200

@@ -20,11 +20,11 @@ swagger = Swagger(app,
                   template={
                       "info": {
                           "title": "API do Star Wars",
-                          "description": "Documentação da API que fornece dados sobre o universo de Star Wars",
+                          "description": "Documentação da API que fornece dados sobre o universo de Star Wars ",
                           "version": "1.0.0",
                           "contact": {
                               "name": "Marcelo Augusto de Mello Paixão",
-                              "email": "marceloamellopaixao@gmail.com",  # Adicione o domínio do e-mail
+                              "email": "marceloamellopaixao@gmail.com",
                               "url": "https://github.com/marceloamellopaixao/API_StarWars_Desafio_PowerOfData"
                           },
                       },
@@ -43,15 +43,15 @@ swagger = Swagger(app,
 
 @app.route('/')
 def home_app():
-    """Home page da API
+    """Página Inicial da API
     ---
     tags:
       - Início
     responses:
       200:
-        description: Página inicial da API. Veja uma prévia [aqui](/)
+        description: Pagina inicial da API. Veja uma prévia [aqui](/)
       400:
-        description: Página inicial não encontrada!
+        description: Pagina inicial não encontrada!
     """
     return render_template('base.html')
 app.register_blueprint(auth)

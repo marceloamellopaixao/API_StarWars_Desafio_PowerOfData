@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="fix: corrigido a documentação README">
+    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="fix: remoção do NAV na página inicial">
+      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/API_StarWars_Desafio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/API_StarWars_Desafio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/ui/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/ui/static/img/background-stars.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/background-stars.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/ui/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_authentication.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,30 +68,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Flask server.API_StarWars_Desafio.executor&quot;: &quot;Run&quot;,
-    &quot;Flask server.Flask (app.py).executor&quot;: &quot;Run&quot;,
-    &quot;Flask server.flaskProject.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_authentication.AuthTestCase.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_authentication.AuthTestCase.test_register.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_authentication.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.jwt-generator.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Flask server.API_StarWars_Desafio.executor": "Run",
+    "Flask server.Flask (app.py).executor": "Run",
+    "Flask server.flaskProject.executor": "Run",
+    "Python tests.Python tests for test_authentication.AuthTestCase.executor": "Run",
+    "Python tests.Python tests for test_authentication.AuthTestCase.test_register.executor": "Run",
+    "Python tests.Python tests in test_authentication.py.executor": "Run",
+    "Python tests.Python tests in tests.executor": "Run",
+    "Python.jwt-generator.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.build.tools.auto.reload": "ALL",
+    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="flaskProject" is-module-sdk="true">
@@ -99,10 +105,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\MarceloAmp\Documents\Projetos\PowerOfData\API_StarWars_Desafio" />
+      <recent name="C:\Users\MarceloAmp\Documents\Projetos\PowerOfData\API_StarWars_Desafio\api\routes" />
+      <recent name="C:\Users\MarceloAmp\Documents\Projetos\PowerOfData\API_StarWars_Desafio\api\ui" />
+      <recent name="C:\Users\MarceloAmp\Documents\Projetos\PowerOfData\API_StarWars_Desafio\api" />
       <recent name="C:\Users\MarceloAmp\Documents\Projetos\PowerOfData\flaskProject\api" />
-      <recent name="C:\Users\MarceloAmp\Documents\Projetos\PowerOfData\flaskProject" />
-      <recent name="C:\Users\MarceloAmp\Documents\Projetos\PowerOfData\flaskProject\app" />
-      <recent name="C:\Users\MarceloAmp\Documents\Projetos\PowerOfData\flaskProject\app\ui" />
     </key>
   </component>
   <component name="RunManager" selected="Flask server.API_StarWars_Desafio">
@@ -138,8 +144,25 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in tests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="API_StarWars_Desafio" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in tests" />
         <item itemvalue="Python tests.Python tests for test_authentication.AuthTestCase" />
       </list>
     </recent_temporary>
@@ -169,6 +192,7 @@
       <workItem from="1731100859731" duration="8280000" />
       <workItem from="1731110495846" duration="2216000" />
       <workItem from="1731161799370" duration="957000" />
+      <workItem from="1731170935322" duration="1371000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -394,14 +418,21 @@
       <option name="project" value="LOCAL" />
       <updated>1731110278405</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fix: remoção do NAV na página inicial">
+      <option name="closed" value="true" />
+      <created>1731171020173</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1731171020173</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Adicionado as configurações do projeto" />
     <MESSAGE value="feat: Adicionado a página inicial da API" />
     <MESSAGE value="feat: Adicionado a Função para buscar os dados na api" />
     <MESSAGE value="feat: Adicionado a Função de Filtragem dos Dados" />
@@ -426,14 +457,15 @@
     <MESSAGE value="fix: Corrigida a função de Ler e Registrar Usuários." />
     <MESSAGE value="feat: Adicionado um Test do Metodo de Autenticação (Registro e Login)" />
     <MESSAGE value="fix: corrigido a documentação README" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: corrigido a documentação README" />
+    <MESSAGE value="fix: remoção do NAV na página inicial" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: remoção do NAV na página inicial" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/flaskProject$jwt_generator.coverage" NAME="jwt-generator Coverage Results" MODIFIED="1731086925990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
     <SUITE FILE_PATH="coverage/flaskProject$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1731088583767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/flaskProject$flaskProject.coverage" NAME="API_StarWars_Desafio Coverage Results" MODIFIED="1731048268783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flaskProject$API_StarWars_Desafio.coverage" NAME="API_StarWars_Desafio Coverage Results" MODIFIED="1731096524306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/API_StarWars_Desafio$.coverage" NAME=" Coverage Results" MODIFIED="1731107495122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/API_StarWars_Desafio$API_StarWars_Desafio.coverage" NAME="API_StarWars_Desafio Coverage Results" MODIFIED="1731111469196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/API_StarWars_Desafio$.coverage" NAME=" Coverage Results" MODIFIED="1731171864513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/API_StarWars_Desafio$API_StarWars_Desafio.coverage" NAME="API_StarWars_Desafio Coverage Results" MODIFIED="1731172295514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

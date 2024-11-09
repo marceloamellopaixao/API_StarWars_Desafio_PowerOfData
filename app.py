@@ -54,7 +54,6 @@ def home_app():
         description: Página inicial não encontrada!
     """
     return render_template('base.html')
-
 app.register_blueprint(auth)
 app.register_blueprint(films)
 app.register_blueprint(people)

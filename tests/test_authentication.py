@@ -46,7 +46,7 @@ class AuthTestCase(unittest.TestCase):
     def test_login_failure(self):
         """Testa o login com credenciais inválidas."""
         response = self.client.post('/login', json={
-            'username': 'teste',
+            'username': 'teste2',
             'password': 'teste123'
         })
         self.assertEqual(response.status_code, 401)

@@ -13,7 +13,7 @@ Criado por Marcelo Augusto em 11/2024
 
 ## Links Úteis
 
-[Aplicação API Funcional - Hospedada na AWS](https://)
+[Aplicação API Funcional - Hospedada na AWS](https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/)
 
 ---
 
@@ -63,7 +63,6 @@ A aplicação está organizada em módulos, cada um responsável por diferentes 
 - **Python**: Linguagem escolhida por sua simplicidade e vasto ecossistema de bibliotecas.
 - **JWT (JSON Web Tokens)**: Usado para autenticação, garantindo que apenas usuários autenticados possam acessar os endpoints protegidos.
 - **AWS (Lambda e API Gateway)**: Hospedagem na nuvem com escalabilidade automática e sem necessidade de gerenciar servidores.
-- **Flasgger**: Utilizado para gerar automaticamente a documentação da API com Swagger, facilitando a interação e os testes de endpoints.
 ---
 
 ## Exemplo de Uso

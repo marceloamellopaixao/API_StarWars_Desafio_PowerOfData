@@ -1,0 +1,1004 @@
+{
+	"info": {
+		"_postman_id": "edcb7c48-7386-4c0b-b4ea-e83b471d4d59",
+		"name": "REST API Star Wars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33439740"
+	},
+	"item": [
+		{
+			"name": "Autentication",
+			"item": [
+				{
+					"name": "Post Auth - Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"marceloamp\",\n    \"password\": \"marcelo123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/login",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"login"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Auth - Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"marceloamp\",\n    \"password\": \"marcelo123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/register",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"register"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			],
+			"description": "Este módulo gerencia a autenticação de usuários. Ele permite o registro de novos usuários e o login, gerando um token JWT para autenticação em requisições subsequentes.\n\n**Endpoints**:\n\n- **/register**: Registra um novo usuário.\n    \n- **/login**: Gera um token JWT para autenticação."
+		},
+		{
+			"name": "Films",
+			"item": [
+				{
+					"name": "Get Films",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/films",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"films"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Films with Statistics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/films/statistics",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"films",
+								"statistics"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Characters by Film ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/films/1/characters",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"films",
+								"1",
+								"characters"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			],
+			"description": "Este módulo fornece dados sobre filmes do universo Star Wars. Permite consultas com opções de filtragem e fornece estatísticas relacionadas aos filmes.\n\n**Endpoints**\n\n- **/films**: Consulta filmes com opções de filtragem.\n    \n- **/films/statistics**: Retorna estatísticas sobre os filmes.\n    \n- **/films/{film_id}/characters**: Retorna os personagens associados a um filme específico."
+		},
+		{
+			"name": "People",
+			"item": [
+				{
+					"name": "Get People",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/people",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"people"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get People with Statistics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/people/statistics",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"people",
+								"statistics"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Homeworld by People ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/people/1/homeworld",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"people",
+								"1",
+								"homeworld"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			],
+			"description": "Este módulo fornece dados sobre personagens do universo Star Wars. Permite consultas filtradas e fornece estatísticas sobre os personagens.\n\n**Endpoints**\n\n- **/people**: Consulta personagens com opções de filtragem.\n    \n- **/people/statistics**: Retorna estatísticas sobre os personagens.\n    \n- **/people/{people_id}/homeworld**: Retorna o planeta natal de um personagem específico."
+		},
+		{
+			"name": "Planets",
+			"item": [
+				{
+					"name": "Get Planets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/planets",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"planets"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Planets with Statistics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/planets/statistics",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"planets",
+								"statistics"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Residents by Planet ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/planets/1/residents",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"planets",
+								"1",
+								"residents"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			],
+			"description": "Este módulo fornece dados sobre planetas do universo Star Wars. Permite consultas com opções de filtragem e fornece estatísticas sobre os planetas.\n\n**Endpoints**:\n\n- **/planets**: Consulta planetas com opções de filtragem.\n    \n- **/planets/statistics**: Retorna estatísticas sobre os planetas.\n    \n- **/planets/{planet_id}/residents**: Retorna os residentes de um planeta específico."
+		},
+		{
+			"name": "Starships",
+			"item": [
+				{
+					"name": "Get Starships",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/starships",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"starships"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Starships with Statistics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/starships/statistics",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"starships",
+								"statistics"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Films by Starships ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/starships/2/films",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"starships",
+								"2",
+								"films"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			],
+			"description": "Este módulo fornece dados sobre naves estelares do universo Star Wars. Permite consultas filtradas e fornece estatísticas sobre as naves.  \n  \nEndpoints:\n\n- **/starships**: Consulta naves estelares com opções de filtragem.\n    \n- **/starships/statistics**: Retorna estatísticas sobre as naves estelares.\n    \n- **/starships/{starship_id}/films**: Retorna os filmes em que uma nave estelar específica aparece."
+		},
+		{
+			"name": "Testes de Autenticação",
+			"item": [
+				{
+					"name": "Post Auth - Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Login bem-sucedido\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(pm.response.json()).to.have.property('access_token');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"marceloamp\",\n    \"password\": \"marcelo123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/login",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"login"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Auth - Login Error",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Credenciais inválidas!\", function () {",
+									"    pm.response.to.have.status(401);",
+									"    pm.expect(pm.response.json().msg).to.include(\"Credenciais inválidas!\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"marceloamp\",\n    \"password\": \"senhaerrada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/login",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"login"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Auth - Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Usuário registrado com sucesso!\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    pm.expect(pm.response.json().msg).to.include(\"Usuário registrado com sucesso!\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"teste1\",\n    \"password\": \"teste12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/register",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"register"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Auth - Register Null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Usuário ou Senha vazio!\", function () {",
+									"    pm.response.to.have.status(400);",
+									"    pm.expect(pm.response.json().msg).to.include(\"Usuário ou Senha vazio!\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"\",\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/register",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"register"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Auth - Register Exist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Usuário já existe!\", function () {",
+									"    pm.response.to.have.status(400);",
+									"    pm.expect(pm.response.json().msg).to.include(\"Usuário já existe!\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"marceloamp\",\n    \"password\": \"marcelo123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/register",
+							"protocol": "https",
+							"host": [
+								"efxkypq832",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"register"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			],
+			"description": "Este módulo gerencia os testes de autenticação de usuários. Ele permite o registro de novos usuários e o login com erros ou com sucesso, gerando um token JWT para autenticação em requisições subsequentes.\n\n**Endpoints**:\n\n- **/register**: Registra um novo usuário.\n    \n- **/login**: Gera um token JWT para autenticação."
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

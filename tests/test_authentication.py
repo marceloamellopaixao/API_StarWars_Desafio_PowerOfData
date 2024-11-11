@@ -1,6 +1,8 @@
 import unittest
 from flask import Flask
 from flask_jwt_extended import JWTManager
+import boto3
+import json
 from api.routes.auth import auth
 
 class AuthTestCase(unittest.TestCase):
@@ -14,7 +16,15 @@ class AuthTestCase(unittest.TestCase):
         self.app.config['JWT_SECRET_KEY'] = 'super-secret'
         self.jwt = JWTManager(self.app)
         self.client = self.app.test_client()
-        self.client.post('/register', json={'username': 'teste', 'password': 'teste123456'})
+
+        # Configuração do S3 simulado
+        self.s3 = boto3.client('s3', region_name='us-east-1')
+        self.bucket_name = 'api-starwars-desafio-bucket'
+        self.s3.create_bucket(Bucket=self.bucket_name)
+
+        # Inicializa o arquivo JSON com um usuário para os testes
+        initial_data = {"users": [{"username": "teste", "password": "teste123456"}]}
+        self.s3.put_object(Bucket=self.bucket_name, Key='credentials/users-dev.json', Body=json.dumps(initial_data))
 
     def test_register_existing_user(self):
         """Testa o registro de um usuário já existente."""

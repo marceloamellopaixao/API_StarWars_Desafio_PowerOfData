@@ -6,33 +6,8 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/register', methods=['POST'])
 def register():
-    """Registra um novo usuário
-    ---
-    tags:
-      - Autenticação
-    parameters:
-      - name: user
-        in: body
-        required: true
-        schema:
-          type: object
-          properties:
-            username:
-              type: string
-              description: Nome de usuário para registro.
-              example: "novo_usuario"
-            password:
-              type: string
-              description: Senha do usuário.
-              example: "senha123"
-          required:
-            - username
-            - password
-    responses:
-      201:
-        description: Usuário registrado com sucesso.
-      400:
-        description: Usuário já existe ou erro na requisição.
+    """
+    Registra um novo usuário
     """
     data = load_users()
 
@@ -65,39 +40,8 @@ def register():
 
 @auth.route('/login', methods=['POST'])
 def login():
-    """Realiza o login e retorna um token JWT
-    ---
-    tags:
-      - Autenticação
-    parameters:
-      - name: Login
-        in: body
-        required: true
-        schema:
-          type: object
-          properties:
-            username:
-              type: string
-              description: Nome de usuário para login.
-              example: "novo_usuario"
-            password:
-              type: string
-              description: Senha do usuário.
-              example: "senha123"
-          required:
-            - username
-            - password
-    responses:
-      200:
-        description: Token JWT gerado com sucesso.
-        schema:
-          type: object
-          properties:
-            access_token:
-              type: string
-              description: Token JWT para autenticação.
-      401:
-        description: Credenciais inválidas.
+    """
+    Realiza o login e retorna um token JWT
     """
     username = request.json.get('username')
     password = request.json.get('password')
@@ -112,7 +56,7 @@ def login():
             access_token = create_access_token(identity=username)
 
             tokenJWT = {
-                'access_token': f'Bearer {access_token}'
+                'access_token': f'{access_token}'
             }
 
             return jsonify(tokenJWT), 200

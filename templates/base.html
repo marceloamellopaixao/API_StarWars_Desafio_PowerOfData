@@ -4,15 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Star Wars API - PowerOfData{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://api-starwars-desafio-bucket.s3.us-east-2.amazonaws.com/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+    <a class="navbar-brand" href="/">API do Star Wars</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse bg-light" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item bg-light">
+                <a class="nav-link" href="/dev/films">Films</a>
+            </li>
+            <li class="nav-item bg-light">
+                <a class="nav-link" href="/dev/people">People</a>
+            </li>
+            <li class="nav-item bg-light">
+                <a class="nav-link" href="/dev/planets">Planets</a>
+            </li>
+            <li class="nav-item bg-light">
+                <a class="nav-link" href="/dev/starships">Starships</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <div class="hero d-flex justify-content-center align-items-center flex-column text-center text-white">
     <h1>Bem-vindo à API do Star Wars!</h1>
-    <p>Utilize o menu para navegar pelos endpoints disponíveis ou acesse a documentação Swagger abaixo.</p>
-    <a href="/apidocs" class="btn btn-primary btn-lg">Acessar Swagger</a>
+    <p>Segue o GitHub da API Criada com as Documentações</p>
+    <a href="https://github.com/marceloamellopaixao/API_StarWars_Desafio_PowerOfData" target="_blank" class="btn btn-primary btn-lg">GitHub</a>
 </div>
 
 <footer class="footer bd-footer text-muted">

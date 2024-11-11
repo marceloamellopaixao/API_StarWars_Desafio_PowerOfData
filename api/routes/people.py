@@ -7,73 +7,6 @@ people = Blueprint('people', __name__)
 @people.route('/people', methods=['GET'])
 @jwt_required()
 def get_people():
-    """Obtém todos os personagens filtrados
-    ---
-    tags:
-      - Personagens
-    parameters:
-      - name: name
-        in: query
-        type: string
-        required: false
-        description: Nome da Personagem a ser filtrada.
-      - name: gender
-        in: query
-        type: string
-        required: false
-        description: Gênero da Personagem a ser filtrada.
-      - name: hair_color
-        in: query
-        type: string
-        required: false
-        description: Cor do cabelo da Personagem a ser filtrada.
-      - name: birth_year
-        in: query
-        type: string
-        required: false
-        description: Ano de nascimento da Personagem a ser filtrada.
-      - name: sort_by
-        in: query
-        type: string
-        required: false
-        description: Campo pelo qual classificar as Personagens, exemplo - name, gender e outros.
-      - name: sort_order
-        in: query
-        type: string
-        required: false
-        description: Ordem da classificação. Pode ser 'asc' para ascendente e 'desc' para descendente.
-    responses:
-      200:
-        description: Lista de Personagens filtradas.
-        schema:
-          type: object
-          properties:
-            results:
-              type: array
-              items:
-                type: object
-                properties:
-                  name:
-                    type: string
-                    description: Nome da Personagem.
-                  gender:
-                    type: string
-                    description: Gênero da Personagem.
-                  hair_color:
-                    type: string
-                    description: Cor do cabelo da Personagem.
-                  birth_year:
-                    type: string
-                    description: Ano de nascimento da Personagem.
-      404:
-        description: Nenhum resultado encontrado.
-        schema:
-          type: object
-          properties:
-            error:
-              type: string
-              description: Mensagem de erro retornada.
-    """
     search_params = {
         'name': request.args.get('name', ''),
         'gender': request.args.get('gender', ''),
@@ -95,44 +28,6 @@ def get_people():
 @people.route('/people/statistics', methods=['GET'])
 @jwt_required()
 def get_people_statistics():
-    """Obtém estatísticas de personagens
-    ---
-    tags:
-      - Personagens
-    description: Retorna estatísticas sobre os personagens disponíveis na API, incluindo contagem total, distribuição de gênero, cor do cabelo e ano de nascimento.
-    responses:
-      200:
-        description: Estatísticas dos personagens.
-        schema:
-          type: object
-          properties:
-            Total de Personagens:
-              type: integer
-              description: Total de personagens disponíveis.
-            Distribuição de Gêneros:
-              type: object
-              additionalProperties:
-                type: integer
-                description: Contagem de personagens por gênero.
-            Distribuição de Cores de Cabelo:
-              type: object
-              additionalProperties:
-                type: integer
-                description: Contagem de personagens por cor de cabelo.
-            Distribuição de Anos de Nascimento:
-              type: object
-              additionalProperties:
-                type: integer
-                description: Contagem de personagens por ano de nascimento.
-      404:
-        description: Nenhum dado encontrado ou erro durante a busca.
-        schema:
-          type: object
-          properties:
-            error:
-              type: string
-              description: Mensagem de erro retornada.
-    """
     people_data = search_data('people/')
     people_list = people_data.get('results', [])
     total_people = len(people_list)
@@ -157,34 +52,6 @@ def get_people_statistics():
 @people.route('/people/<int:people_id>/homeworld', methods=['GET'])
 @jwt_required()
 def get_homeworld_by_person(people_id):
-    """Obtém o planeta natal de um(a) personagem específico(a)
-    ---
-    tags:
-      - Personagens
-    parameters:
-      - name: people_id
-        in: path
-        type: integer
-        required: true
-        description: ID do personagem para buscar o planeta natal.
-    responses:
-      200:
-        description: URL do planeta natal do personagem.
-        schema:
-          type: object
-          properties:
-            homeworld:
-              type: string
-              description: URL do planeta natal na API.
-      404:
-        description: Personagem não encontrado ou sem planeta natal.
-        schema:
-          type: object
-          properties:
-            msg:
-              type: string
-              description: Mensagem de erro retornada.
-    """
     result = search_data(f'people/{people_id}/')
 
     # Verifica se result é um tuple e extrai os dados ou retorna erro

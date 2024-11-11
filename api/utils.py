@@ -1,6 +1,7 @@
+import boto3
 import requests
 import json
-import os
+import botocore
 
 # Função para buscar os dados na api
 SWAPI_URL = 'https://swapi.dev/api/'
@@ -115,7 +116,12 @@ def get_statistics_func(data_list, atributos):
 
     return contagem
 
-# Funções de Autenticação (Credenciais)
+# Configurações do S3
+BUCKET_NAME = 'api-starwars-desafio-bucket'
+FILE_KEY = 'credentials/users-prod.json'
+
+s3 = boto3.client('s3')
+
 def save_users(data):
     """
     Salva o usuário no arquivo.
@@ -124,42 +130,40 @@ def save_users(data):
     os dados do usuário. Se o arquivo não existir, ele será criado.
     """
     try:
-        credentials_dir = 'api/credentials'
-        users_file = os.path.join(credentials_dir, 'users.json')
-
-        if not os.path.exists(credentials_dir):
-            os.makedirs(credentials_dir)
-
-        with open(users_file, 'w') as file:
-            json.dump(data, file, indent=4)
+        json_data = json.dumps(data, indent=4)
+        response = s3.put_object(Bucket=BUCKET_NAME, Key=FILE_KEY, Body=json_data)
+        print(f"Upload realizado com sucesso: {response}")
 
     except json.JSONDecodeError as e:
         print(f"Erro ao decodificar JSON: {e}")
 
-    except FileNotFoundError:
-        return {"users": []}
-
     except Exception as e:
         print(f"Erro ao carregar usuários: {e}")
-        return {"users": []}
 
 def load_users():
     """
-    Busca todos os usuários
+    Busca todos os usuários.
 
     Esta função busca o arquivo users.json,
     trazendo todos os dados armazenados.
     """
     try:
-        credentials_dir = 'api/credentials'
-        users_file = os.path.join(credentials_dir, 'users.json')
+        # Pega o objeto do S3
+        response = s3.get_object(Bucket=BUCKET_NAME, Key=FILE_KEY)
+        data = response['Body'].read().decode('utf-8')
+        return json.loads(data)
 
-        with open(users_file) as file:
-            return json.load(file)
     except json.JSONDecodeError as e:
         print(f"Erro ao decodificar JSON: {e}")
-    except FileNotFoundError:
         return {"users": []}
+
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == 'NoSuchKey':
+            return {"users": []}
+        else:
+            print(f"Erro ao carregar usuários: {e}")
+            return {"users": []}
+
     except Exception as e:
         print(f"Erro ao carregar usuários: {e}")
         return {"users": []}

@@ -1918,3 +1918,4 @@
 /.venv/Scripts/pythonw.exe
 /.venv/pyvenv.cfg
 /tests/credentials/
+/.venv/

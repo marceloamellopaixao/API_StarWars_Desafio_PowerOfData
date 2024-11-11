@@ -118,7 +118,7 @@ def get_statistics_func(data_list, atributos):
 
 # Configurações do S3
 BUCKET_NAME = 'api-starwars-desafio-bucket'
-FILE_KEY = 'credentials/users-prod.json'
+FILE_KEY = 'credentials/users-dev.json'
 
 s3 = boto3.client('s3')
 

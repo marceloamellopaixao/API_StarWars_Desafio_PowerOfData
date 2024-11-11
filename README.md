@@ -65,6 +65,10 @@ A aplicação está organizada em módulos, cada um responsável por diferentes 
 - **AWS (Lambda e API Gateway)**: Hospedagem na nuvem com escalabilidade automática e sem necessidade de gerenciar servidores.
 ---
 
+## Desenho de Arquitetura (AWS)
+![AWS Arquitetura - API Star Wars.jpg](AWS%20Arquitetura%20-%20API%20Star%20Wars.jpg)
+---
+
 ## Exemplo de Uso
 
 ### Registro de Usuário

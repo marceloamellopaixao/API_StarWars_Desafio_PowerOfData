@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="fix: Correção da conexão com o s3 users-prod">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f7286236-fd5e-4408-ac0e-c18cf5d4e0e9" name="Changes" comment="feat: Adicionado o Desenho de Arquitetura e postman_collection para utilização dos endpoints.">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +228,7 @@
       <workItem from="1731338509623" duration="30000" />
       <workItem from="1731338864242" duration="436000" />
       <workItem from="1731339309532" duration="370000" />
-      <workItem from="1731356167116" duration="733000" />
+      <workItem from="1731356167116" duration="1593000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -568,7 +566,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731297587386</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="fix: Correção da conexão com o s3 users-dev">
+      <option name="closed" value="true" />
+      <created>1731357337626</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1731357337626</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat: Adicionado o Desenho de Arquitetura e postman_collection para utilização dos endpoints.">
+      <option name="closed" value="true" />
+      <created>1731357393681</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1731357393681</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,8 +625,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Adicionado o metodo de Obtém todos os personagens" />
-    <MESSAGE value="feat: Adicionado o metodo de obter as estatísticas dos personagens" />
     <MESSAGE value="feat: Adicionado o metodo de obter todos os planetas" />
     <MESSAGE value="feat: Adicionado o metodo de obter as estatísticas dos planetas" />
     <MESSAGE value="feat: Adicionado o metodo de obter todas as naves estelares" />
@@ -636,7 +648,9 @@
     <MESSAGE value="fix: Correção das funções de buscar e registrar os dados do usuário" />
     <MESSAGE value="fix: Correção do arquivo css e requirements.txt" />
     <MESSAGE value="fix: Correção da conexão com o s3 users-prod" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: Correção da conexão com o s3 users-prod" />
+    <MESSAGE value="fix: Correção da conexão com o s3 users-dev" />
+    <MESSAGE value="feat: Adicionado o Desenho de Arquitetura e postman_collection para utilização dos endpoints." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado o Desenho de Arquitetura e postman_collection para utilização dos endpoints." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/flaskProject$jwt_generator.coverage" NAME="jwt-generator Coverage Results" MODIFIED="1731086925990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />

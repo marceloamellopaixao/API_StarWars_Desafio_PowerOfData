@@ -79,7 +79,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"marceloamp\",\n    \"password\": \"marcelo123456\"\n}",
+							"raw": "{\n    \"username\": \"?\",\n    \"password\": \"?\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -111,6 +111,86 @@
 		{
 			"name": "Films",
 			"item": [
+				{
+					"name": "Filtros e Ordenação",
+					"item": [
+						{
+							"name": "Films by Filter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/films?title=&producer=&director=",
+									"protocol": "https",
+									"host": [
+										"efxkypq832",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"films"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "",
+											"description": "Filtragem por Titulo"
+										},
+										{
+											"key": "producer",
+											"value": "",
+											"description": "Filtragem por Produtor"
+										},
+										{
+											"key": "director",
+											"value": "",
+											"description": "Filtragem por Diretor"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Films by Sort",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/films?sort_by=producer&sort_order=asc",
+									"protocol": "https",
+									"host": [
+										"efxkypq832",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"films"
+									],
+									"query": [
+										{
+											"key": "sort_by",
+											"value": "producer",
+											"description": "Ordenações por Tipos: title, producer e director"
+										},
+										{
+											"key": "sort_order",
+											"value": "asc",
+											"description": "Ordenação: asc e desc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
 				{
 					"name": "Get Films",
 					"event": [
@@ -181,7 +261,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "s",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -265,6 +345,91 @@
 			"name": "People",
 			"item": [
 				{
+					"name": "Filtros e Ordenação",
+					"item": [
+						{
+							"name": "People by Filter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/people?name=&gender=&hair_color=&birth_year",
+									"protocol": "https",
+									"host": [
+										"efxkypq832",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"people"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "",
+											"description": "Filtragem por Nome"
+										},
+										{
+											"key": "gender",
+											"value": "",
+											"description": "Filtragem por Genero"
+										},
+										{
+											"key": "hair_color",
+											"value": "",
+											"description": "Filtragem por Cor do Cabelo"
+										},
+										{
+											"key": "birth_year",
+											"value": null,
+											"description": "Filtragem por Ano de Nascimento"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "People by Sort",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/people?sort_by=name&sort_order=asc",
+									"protocol": "https",
+									"host": [
+										"efxkypq832",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"people"
+									],
+									"query": [
+										{
+											"key": "sort_by",
+											"value": "name",
+											"description": "Ordenações por Tipos: name, gender, hair_color, birth_year"
+										},
+										{
+											"key": "sort_order",
+											"value": "asc",
+											"description": "Ordenação: asc e desc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Get People",
 					"event": [
 						{
@@ -286,7 +451,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTM3MjE3MywianRpIjoiYTRiYTdhMzUtNmFlZS00Y2QyLWFhYzUtZDBiZWRlNGRjMjY2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3RlMTIiLCJuYmYiOjE3MzEzNzIxNzMsImNzcmYiOiIwM2NkMTViMi0xOWRlLTQ3NzgtODNiZS03NmU1YzQ2M2FiNDUiLCJleHAiOjE3MzEzNzMwNzN9.IxnbeJxqQHJxXAn9_KDuVtwVIs4__dIvMZQmklo7H8hKyy8Chy3Vt3KCo3KoOZQn80wYROvaR29GwXkAtGuIGQ",
 									"type": "string"
 								}
 							]
@@ -334,7 +499,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTM3MjE3MywianRpIjoiYTRiYTdhMzUtNmFlZS00Y2QyLWFhYzUtZDBiZWRlNGRjMjY2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3RlMTIiLCJuYmYiOjE3MzEzNzIxNzMsImNzcmYiOiIwM2NkMTViMi0xOWRlLTQ3NzgtODNiZS03NmU1YzQ2M2FiNDUiLCJleHAiOjE3MzEzNzMwNzN9.IxnbeJxqQHJxXAn9_KDuVtwVIs4__dIvMZQmklo7H8hKyy8Chy3Vt3KCo3KoOZQn80wYROvaR29GwXkAtGuIGQ",
 									"type": "string"
 								}
 							]
@@ -417,6 +582,86 @@
 		{
 			"name": "Planets",
 			"item": [
+				{
+					"name": "Filtros e Ordenação",
+					"item": [
+						{
+							"name": "Planets by Filter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/planets?name=&terrain=&climate=",
+									"protocol": "https",
+									"host": [
+										"efxkypq832",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"planets"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "",
+											"description": "Filtragem por Nome do Planeta"
+										},
+										{
+											"key": "terrain",
+											"value": "",
+											"description": "Filtragem por Terreno do Planeta"
+										},
+										{
+											"key": "climate",
+											"value": "",
+											"description": "Filtragem por Clima do Planeta"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Planets by Sort",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/planets?sort_by=name&sort_order=asc",
+									"protocol": "https",
+									"host": [
+										"efxkypq832",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"planets"
+									],
+									"query": [
+										{
+											"key": "sort_by",
+											"value": "name",
+											"description": "Ordenações por Tipos: name, terrain, climate"
+										},
+										{
+											"key": "sort_order",
+											"value": "asc",
+											"description": "Ordenação: asc e desc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
 				{
 					"name": "Get Planets",
 					"event": [
@@ -570,6 +815,86 @@
 		{
 			"name": "Starships",
 			"item": [
+				{
+					"name": "Filtros e Ordenação",
+					"item": [
+						{
+							"name": "Starships by Filter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/starships?name=&manufacturer=&starship_class=",
+									"protocol": "https",
+									"host": [
+										"efxkypq832",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"starships"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "",
+											"description": "Filtragem por Nome da Nave"
+										},
+										{
+											"key": "manufacturer",
+											"value": "",
+											"description": "Filtragem por Fabricando da Nave"
+										},
+										{
+											"key": "starship_class",
+											"value": "",
+											"description": "Filtragem por Classe de Nave"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Starships by Sort",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/starships?sort_by=name&sort_order=asc",
+									"protocol": "https",
+									"host": [
+										"efxkypq832",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"dev",
+										"starships"
+									],
+									"query": [
+										{
+											"key": "sort_by",
+											"value": "name",
+											"description": "Ordenações por Tipos: name, manufacturer e starship_class"
+										},
+										{
+											"key": "sort_order",
+											"value": "asc",
+											"description": "Ordenação: asc e desc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
 				{
 					"name": "Get Starships",
 					"event": [
@@ -979,7 +1304,14 @@
 		}
 	],
 	"auth": {
-		"type": "bearer"
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTM3MDMwMSwianRpIjoiODQyZjUwMTItNTAwYS00YzEwLTk3YjMtNDM4ODAyYjY5ZDI5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im1hcmNlbG9hbXAiLCJuYmYiOjE3MzEzNzAzMDEsImNzcmYiOiJkZmQ5YmI4NS03MGFhLTRmN2ItODViNi1kZWIwZWNkZDM3MDYiLCJleHAiOjE3MzEzNzEyMDF9.grn6Pg2cRVRnNlNxtRtoLAi3X7MBUOJw0_AaRL16zoRBAFU6kJZoIiAk2_kfhFu20P3di4twHZVJYaQTb2YQYQ",
+				"type": "string"
+			}
+		]
 	},
 	"event": [
 		{

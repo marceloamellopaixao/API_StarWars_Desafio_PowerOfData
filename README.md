@@ -13,6 +13,8 @@ Criado por Marcelo Augusto em 11/2024
 
 ## Links Úteis
 
+[Vídeo da Solução do Case](https://youtu.be/lFISKEkoTaA)
+
 [Aplicação API Funcional - Hospedada na AWS](https://efxkypq832.execute-api.us-east-2.amazonaws.com/dev/)
 
 ---
